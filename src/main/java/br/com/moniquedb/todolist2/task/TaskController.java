@@ -45,6 +45,7 @@ public class TaskController {
             var tasks = this.taskRepository.findByIdUser((UUID)idUser);
             return tasks;
         }
+       
         @PutMapping("/{id}")
         public ResponseEntity update(@RequestBody TaskModel taskModel, HttpServletRequest request, @PathVariable UUID id){
             var task = this.taskRepository.findById(id).orElse(null);
